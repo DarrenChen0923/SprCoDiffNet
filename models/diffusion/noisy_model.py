@@ -12,7 +12,6 @@ class DenoiseModel(nn.Module):
         
         Args:
         - x (Tensor): 输入的图像张量。
-        - noise_level (Tensor): 当前时间步的噪声水平。
 
         Returns:
         - predicted_noise (Tensor): 预测的噪声。

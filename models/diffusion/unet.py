@@ -14,7 +14,7 @@ class UNet(nn.Module):
             nn.BatchNorm2d(64),
             nn.ReLU(inplace=True),
         )
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)  # 适用于尺寸≥30x30
+        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)  # grid size≥30x30
         
         self.encoder2 = nn.Sequential(
             nn.Conv2d(64, 128, kernel_size=3, padding=1),
@@ -24,7 +24,7 @@ class UNet(nn.Module):
             nn.BatchNorm2d(128),
             nn.ReLU(inplace=True),
         )
-        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)  # 适用于尺寸≥60x60
+        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)  # grid size≥60x60
         
         self.bottleneck = nn.Sequential(
             nn.Conv2d(128, 256, kernel_size=3, padding=1),
